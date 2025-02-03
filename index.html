@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You</title>
+  <style>
+    /* Reset default styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff77ff, #ff7b00);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      animation: backgroundAnimation 10s infinite alternate;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    button {
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      background: #ff6600;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #ff4d00;
+      transform: scale(1.1);
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    #message {
+      font-size: 2rem;
+      margin-top: 30px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      display: none;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background: linear-gradient(135deg, #ff77ff, #ff7b00);
+      }
+
+      50% {
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+      }
+
+      100% {
+        background: linear-gradient(135deg, #ff77ff, #ff7b00);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+      color: #ff6666;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      25% {
+        transform: scale(1.2);
+      }
+
+      50% {
+        transform: scale(1);
+      }
+
+      75% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to the Magic Click!</h1>
+  <button onclick="displayMessage()">Click Me</button>
+  <div id="message"></div>
+  <div class="heart">❤️</div>
+
+  <script>
+    function displayMessage() {
+      const messageDiv = document.getElementById('message');
+      messageDiv.innerText = "Khush Khush Please khaana khaao";
+      messageDiv.style.display = "block";
+    }
+  </script>
+</body>
+
+</html>
